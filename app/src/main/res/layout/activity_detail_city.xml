@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/input_city_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_city_name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/input_city_cep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_city_cep"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/input_city_uf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_city_uf"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/input_city_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_city_latitude"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/input_city_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_city_longitude"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_save" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_delete" />
+
+    <Button
+        android:id="@+id/button_gps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_gps" />
+
+</LinearLayout>

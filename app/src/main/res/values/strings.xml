@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">cities</string>
+
+    <string name="button_save">Salvar</string>
+
+    <string name="hint_city">Nova Cidade</string>
+    <string name="hint_city_name">Nome da Cidade</string>
+    <string name="hint_city_uf">UF</string>
+    <string name="hint_city_cep">CEP</string>
+    <string name="hint_city_latitude">Latitude</string>
+    <string name="hint_city_longitude">Longitude</string>
+    <string name="button_gps">Google Maps</string>
+    <string name="button_delete">Deletar</string>
+
+</resources>
