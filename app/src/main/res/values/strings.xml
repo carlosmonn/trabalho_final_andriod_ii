@@ -9,7 +9,11 @@
     <string name="hint_city_cep">CEP</string>
     <string name="hint_city_latitude">Latitude</string>
     <string name="hint_city_longitude">Longitude</string>
-    <string name="button_gps">Google Maps</string>
+    <string name="button_map">Mapa</string>
     <string name="button_delete">Deletar</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="normal">Normal</string>
+    <string name="satelite">Satélite</string>
+    <string name="terreno">Terreno</string>
 
 </resources>

@@ -52,9 +52,9 @@
         android:text="@string/button_delete" />
 
     <Button
-        android:id="@+id/button_gps"
+        android:id="@+id/button_map"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_gps" />
+        android:text="@string/button_map" />
 
 </LinearLayout>

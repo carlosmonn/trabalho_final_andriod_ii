@@ -1,6 +1,7 @@
 package br.edu.unidavi.cities;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
@@ -56,5 +57,13 @@ public class DetailCityActivity extends AppCompatActivity {
                         )
                 )
         );
+
+        Button buttonMap = findViewById(R.id.button_map);
+        buttonMap.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+            intent.putExtra("latitude", city.getLatitude());
+            intent.putExtra("longitude", city.getLongitude());
+            startActivity(intent);
+        });
     }
 }
