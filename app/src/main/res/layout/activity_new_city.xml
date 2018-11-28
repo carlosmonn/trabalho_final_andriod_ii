@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_city_cep"
-        android:inputType="text" />
+        android:inputType="numberSigned"
+        android:digits="0123456789-" />
 
     <EditText
         android:id="@+id/input_city_uf"
@@ -30,14 +31,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_city_latitude"
-        android:inputType="text" />
+        android:inputType="numberSigned|numberDecimal" />
 
     <EditText
         android:id="@+id/input_city_longitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_city_longitude"
-        android:inputType="text" />
+        android:inputType="numberSigned|numberDecimal" />
 
     <Button
         android:id="@+id/button_save"

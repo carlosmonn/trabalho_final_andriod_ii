@@ -1,9 +1,11 @@
 package br.edu.unidavi.cities;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,6 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private CityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +66,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.mapstyle));
-        mMap.getUiSettings().setZoomControlsEnabled(true);
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17f));
+        viewModel = ViewModelProviders.of(this).get(CityViewModel.class);
+        viewModel.cityLiveData.observe(this, city -> {
+            if (city != null) {
+                mMap = googleMap;
+                mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.mapstyle));
+                mMap.getUiSettings().setZoomControlsEnabled(true);
+                double latitude = Double.parseDouble(city.getLatitude());
+                double longitude = Double.parseDouble(city.getLongitude());
+
+                // Add a marker in Sydney and move the camera
+                LatLng sydney = new LatLng(latitude, longitude);
+                mMap.addMarker(new MarkerOptions().position(sydney).title(city.getName() + " - " + city.getUf()));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 11f));
+            }
+        });
+
+        viewModel.success.observe(this, success -> {
+            if (Boolean.TRUE.equals(success)) {
+                finish();
+            }
+        });
+
+        int id = getIntent().getIntExtra("id", 0);
+        viewModel.findCityById(id);
     }
 }

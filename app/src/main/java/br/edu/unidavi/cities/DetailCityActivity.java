@@ -61,8 +61,7 @@ public class DetailCityActivity extends AppCompatActivity {
         Button buttonMap = findViewById(R.id.button_map);
         buttonMap.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-            intent.putExtra("latitude", city.getLatitude());
-            intent.putExtra("longitude", city.getLongitude());
+            intent.putExtra("id", city.getId());
             startActivity(intent);
         });
     }
