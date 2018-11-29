@@ -15,5 +15,6 @@
     <string name="normal">Normal</string>
     <string name="satelite">Satélite</string>
     <string name="terreno">Terreno</string>
+    <string name="button_location">Minha localização</string>
 
 </resources>
